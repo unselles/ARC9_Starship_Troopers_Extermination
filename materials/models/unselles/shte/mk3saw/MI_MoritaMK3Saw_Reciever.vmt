@@ -1,0 +1,39 @@
+"VertexLitGeneric"
+{
+    "$basetexture" "models\unselles\shte\mk3saw\MI_MoritaMK3Saw_Reciever_rgb"
+    "$bumpmap" "models\unselles\shte\mk3saw\MI_MoritaMK3Saw_Reciever_n"
+    "$phongexponenttexture" "models\unselles\shte\mk3saw\MI_MoritaMK3Saw_Reciever_e"
+
+    "$color2" "[0 0 0]"
+    "$blendtintbybasealpha" "1"
+
+	"$detail"                   "models\unselles\shte\mk3saw\MI_MoritaMK3Saw_Reciever_emis"
+	"$detailframe"              "1"
+	"$detailblendmode"          "5"
+	"$detailscale"              "1"
+
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongfresnelranges" "[1 0.5 0]"
+    "$phongalbedotint" "0"
+
+    "$rimlight" "1"
+    "$rimlightexponent" "100"
+    "$rimmask" "1"
+    "$rimlightboost" "0.2"
+
+    "$normalmapalphaenvmapmask" "1"
+    "$envmapfresnel" "1"
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.02 0.02 0.02]"
+
+    "Proxies"
+    {
+        "MwEnvMapTint"
+        {
+            "specularity" "0.5"             //0.25, 0.5, 0.75, 1
+            "min" "0"
+            "max" "0.2"                      
+        }
+    }
+}
