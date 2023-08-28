@@ -4,7 +4,7 @@ SWEP.Base					= "arc9_base"
 
 SWEP.Spawnable				= true
 SWEP.Category				= "ARC9 - Starship Troopers Extermination"
-SWEP.SubCategory = "Assault Rifles"
+SWEP.SubCategory 			= "Assault Rifles"
 
 SWEP.PrintName				= "Morita MK1 Rifle"
 SWEP.TrueName				= "Morita Rifle"
@@ -293,11 +293,11 @@ SWEP.EnterSightsSound = ratel
 SWEP.ExitSightsSound = ratel
 
 
-SWEP.FiremodeSound				= "A_WeaponRifle_Safety_01.ogg"
+SWEP.FiremodeSound				= {s	= common .. "A_WeaponRifle_Safety_01.ogg"}
 
 local ci = CHAN_AUTO
 local ratel = {common .. "A_ADS_Pilum_Foley_01.ogg", common .. "A_ADS_Pilum_Foley_02.ogg", common .. "A_ADS_ChiHong_Foley_01.ogg"}
-local rottle = {common .. "A_ADS_Foley_Movement_01.ogg", common .. "A_ADS_Foley_Movement_02.ogg", common .. "A_ADS_Foley_Movement_03.ogg", common .. "A_Rifle_Foley_02.ogg", common .. "rattle.ogg"}
+local rottle = {common .. "A_ADS_Foley_Movement_01.ogg", common .. "A_ADS_Foley_Movement_02.ogg", common .. "A_ADS_Foley_Movement_03.ogg", common .. "A_Rifle_Foley_02.ogg",}
 
 SWEP.ReloadInSights				= false -- This weapon can aim down sights while reloading.
 
@@ -433,7 +433,7 @@ SWEP.Animations = {
 			{s = rottle,									t = 0},
 			{s = path .. "A_MoritaMK1Rifle_reload_magout_01.ogg",		t = 0.075},
 			{s = rottle,									t = 0.3},
-			{s = path .. "MK18_Reload_Normal_MagOut.ogg",				t = 0.5, c = ci},
+			{s = path .. "",				t = 0.5, c = ci},
 			{s = rottle,									t = 0.35},
 			{s = path .. "A_MoritaMK1Rifle_reload_magin_01.ogg", "A_MoritaMK1Rifle_reload_magin_02.ogg", "A_MoritaMK1Rifle_reload_magin_03.ogg", "A_MoritaMK1Rifle_reload_magin_04.ogg",					t = 0.95, c = ci},
 			{s = rottle,									t = 0.6},
