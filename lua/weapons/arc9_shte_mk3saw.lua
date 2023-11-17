@@ -248,7 +248,7 @@ SWEP.CamOffsetAng			= Angle(0, 0, 0)
 
 -------------------------- MAG DROP
 
-SWEP.DropMagazineModel = "models/shared/mags/mk1r_mag.mdl"
+SWEP.DropMagazineModel = ""
 SWEP.DropMagazineTime = 2
 SWEP.DropMagazineQCA = 4
 SWEP.DropMagazinePos = Vector(0, 0, 0)
@@ -258,26 +258,26 @@ SWEP.DropMagazineVelocity = Vector(-30, -50, 0)
 -------------------------- SOUNDS
 
 
-local path					= ")^weapons/mk1rifle/"
+local path					= ")^weapons/mk3saw/"
 local common				= ")^weapons/shared/"
-SWEP.FirstShootSound			= path .. "A_Morita_Fire_1P_Loop_01.ogg"
-SWEP.ShootSound					= path .. "A_Morita_Fire_1P_Loop_02.ogg"
-SWEP.DistantShootSound			= path .. ""
+SWEP.FirstShootSound			= path .. "A_Saw_Fire_1P_Loop_01.ogg"
+SWEP.ShootSound					= path .. "A_Saw_Fire_1P_Loop_02.ogg"
+SWEP.DistantShootSound			= path .. "A_Saw_Fire_3P_Loop_Far_01"
 SWEP.ShootSoundSilenced			= path .. ""
 SWEP.DistantShootSoundSilenced	= common .. ""
 SWEP.DryFireSound				= common .. "A_Rifle_Trigger_01.ogg"
 
 SWEP.ShootSound = {
-    path .. "A_Morita_Fire_1P_Loop_01.ogg",
-    path .. "A_Morita_Fire_1P_Loop_02.ogg",
-    path .. "A_Morita_Fire_1P_Loop_03.ogg",
-    path .. "A_Morita_Fire_1P_Loop_04.ogg",
-	path .. "A_Morita_Fire_1P_Loop_05.ogg",
-    path .. "A_Morita_Fire_1P_Loop_06.ogg",
-    path .. "A_Morita_Fire_1P_Loop_07.ogg",
-    path .. "A_Morita_Fire_1P_Loop_08.ogg",
-	path .. "A_Morita_Fire_1P_Loop_09.ogg",
-    path .. "A_Morita_Fire_1P_Loop_10.ogg"
+    path .. "A_Saw_Fire_1P_Loop_01.ogg",
+    path .. "A_Saw_Fire_1P_Loop_02.ogg",
+    path .. "A_Saw_Fire_1P_Loop_03.ogg",
+    path .. "A_Saw_Fire_1P_Loop_04.ogg",
+	path .. "A_Saw_Fire_1P_Loop_05.ogg",
+    path .. "A_Saw_Fire_1P_Loop_06.ogg",
+    path .. "A_Saw_Fire_1P_Loop_07.ogg",
+    path .. "A_Saw_Fire_1P_Loop_08.ogg",
+	path .. "A_Saw_Fire_1P_Loop_09.ogg",
+    path .. "A_Saw_Fire_1P_Loop_10.ogg",
 }
 
 SWEP.DryFireSingleAction = false
@@ -289,7 +289,7 @@ SWEP.ExitSightsSound = ratel
 SWEP.FiremodeSound				= {s	= common .. "A_WeaponRifle_Safety_01.ogg"}
 
 local ci = CHAN_AUTO
-local ratel = {common .. "A_ADS_Pilum_Foley_01.ogg", common .. "A_ADS_Pilum_Foley_02.ogg", common .. "A_ADS_ChiHong_Foley_01.ogg"}
+local ratel = {common .. "A_ADS_Pilum_Foley_01.ogg", common .. "A_ADS_Pilum_Foley_02.ogg", common .. "A_ADS_ChiHong_Foley_01.ogg",}
 local rottle = {common .. "A_ADS_Foley_Movement_01.ogg", common .. "A_ADS_Foley_Movement_02.ogg", common .. "A_ADS_Foley_Movement_03.ogg", common .. "A_Rifle_Foley_02.ogg",}
 
 SWEP.ReloadInSights				= false -- This weapon can aim down sights while reloading.
@@ -308,8 +308,9 @@ SWEP.Animations = {
 		Source				= "draw",
 		Time				= 30 / 22,
 		EventTable = {
-			{s	= common .. "A_Rifle_Foley_01.ogg",			t = 0.35},
+			{s	= path .. "A_MoritaMK3SAW_Deploy_01.ogg",			t = 0.4},
 			{s	= common .. "A_ADS_Foley_Movement_02.ogg",			t = 0.15},
+			{s	= common .. "A_ADS_Foley_Movement_01.ogg",			t = 0.6},
 			{s	= ratel,							t = 0.2},
 		},
 	},
@@ -317,14 +318,14 @@ SWEP.Animations = {
 		Source				= "draw_empty",
 		Time				= 30 / 22,
 		EventTable = {
-			{s	= common .. "A_Rifle_Foley_01.ogg",			t = 0.35},
+			{s	= common .. "A_MoritaMK3SAW_Deploy_01.ogg",			t = 0.4},
 			{s	= common .. "A_ADS_Foley_Movement_02.ogg",			t = 0.15},
 			{s	= ratel,							t = 0.2},
 		},
 	},
 	["holster"] = {
 		Source				= "holster",
-		Time				= 0.9,
+		Time				= 18 / 22,
 		EventTable = {
 			{s	= common .. "A_Rifle_Foley_02.ogg",			t = 0.35},
 			{s	= common .. "A_ADS_Foley_Movement_01.ogg",			t = 0.15},
@@ -346,8 +347,9 @@ SWEP.Animations = {
 		EventTable = {
 			{s	= {
 		
-				path .. "",
-				path .. ""
+				path .. "A_Saw_Fire_1P_Tail_01",
+				path .. "A_Saw_Fire_1P_Tail_02",
+				path .. "A_Saw_Fire_1P_Tail_03",
 			},										t = 0.03},
 		},
 	},
@@ -417,13 +419,13 @@ SWEP.Animations = {
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 0},
 			{s = rottle,									t = 0},
-			{s = path .. "A_MoritaMK1Rifle_reload_magout_01.ogg",		t = 0.075},
+			{s = path .. "A_MoritaMK3SAW_Magout_01.ogg",		t = 0.85},
 			{s = rottle,									t = 0.3},
 			{s = path .. "",				t = 0.5, c = ci},
 			{s = rottle,									t = 0.35},
-			{s = path .. "A_MoritaMK1Rifle_reload_magin_04.ogg",					t = 0.95, c = ci},
+			{s = path .. "A_MoritaMK3SAW_MagIn_01.ogg",					t = 3.5, c = ci},
 			{s = rottle,									t = 0.6},
-			{s = common .. "A_Weapon_Slap.ogg",	t = 1.52},
+			{s = common .. "A_Weapon_Slap.ogg",	t = 3.9},
 			{s = rottle,	},
 		},
 	},
@@ -473,10 +475,10 @@ SWEP.Animations = {
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 1.8},
 			{s = rattel,								t = 0},
 			{s = common .. "A_Rifle_Foley_01.ogg",			t = 0, c = ci},
-			{s = path .. "A_MoritaMK1Rifle_reload_magout_01.ogg",				t = 0.12, c = ci},
-			{s = common .. "A_Weapon_Slap.ogg",	t = 1.5},
-			{s = path .. "A_MoritaMK1Rifle_reload_magin_02.ogg",				t = 0.80, c = ci},
-			{s = path .. "A_MoritaMK1Rifle_Bolt_01.ogg",					t = 2, c = ci},
+			{s = path .. "A_MoritaMK3SAW_Magout_01.ogg",				t = 0.8, c = ci},
+			{s = path .. "A_MoritaMK3SAW_MagIn_02.ogg",				t = 3, c = ci},
+			{s = common .. "A_Weapon_Slap.ogg",	t = 3.6, c = ci},
+			{s = path .. "A_MoritaMK3SAW_Bolt_01.ogg",					t = 4.7, c = ci},
 			{s = common .. "A_Rifle_Foley_02.ogg",			t = 0, c = ci},
 			{s = rottle,								t = 1.9},
 		},
